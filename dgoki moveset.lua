@@ -19,17 +19,18 @@ local function death_check(m)
     -- but it works for rare crashes related to deaths.
     -- so i keep this in the code.
     
-    -- deaths
+    -- Deaths.
     if m.action == ACT_DEATH_ON_BACK then return true end
     if m.action == ACT_DEATH_ON_STOMACH then return true end
     if m.action == ACT_WATER_DEATH then return true end
     if m.action == ACT_STANDING_DEATH then return true end
     if m.action == ACT_QUICKSAND_DEATH then return true end
-    -- exits
+    -- Death exits.
     if m.action == ACT_DEATH_EXIT then return true end
     if m.action == ACT_FALLING_DEATH_EXIT then return true end
     if m.action == ACT_DEATH_EXIT_LAND then return true end
     if m.action == ACT_SPECIAL_DEATH_EXIT then return true end
+    -- Bubble because yes.
     if m.action == ACT_BUBBLED then return true end
     return false
 end
