@@ -93,28 +93,28 @@ local function dg_moveset_mario_update(m)
     -- but also i am kinda too lazy to fix it right now, so uh, enjoy this mess. :P
     ---------------------------------------------------------------------------------------
     if (m.controller.buttonDown & A_BUTTON) ~= 0 and m.action == ACT_GROUND_POUND_LAND then
-		    set_mario_action(m, ACT_LAVA_BOOST, 0)
+	    set_mario_action(m, ACT_LAVA_BOOST, 0)
             m.vel.y = 125
     elseif B_PRESS and (m.action == ACT_TOP_OF_POLE_JUMP or m.action == ACT_LAVA_BOOST) then
-		    set_mario_action(m, ACT_DIVE, 0)
+	   set_mario_action(m, ACT_DIVE, 0)
     elseif Z_TRIG_PRESS and (m.action == ACT_TOP_OF_POLE_JUMP or m.action == ACT_LAVA_BOOST) then
-		    set_mario_action(m, ACT_GROUND_POUND, 0)
-	elseif B_PRESS and m.action == ACT_LONG_JUMP then
-		    set_mario_action(m, ACT_DIVE, 0)
+	   set_mario_action(m, ACT_GROUND_POUND, 0)
+    elseif B_PRESS and m.action == ACT_LONG_JUMP then
+	   set_mario_action(m, ACT_DIVE, 0)
     elseif A_PRESS and (m.controller.buttonDown & Z_TRIG) == 0 and m.action == ACT_LONG_JUMP then
-		    set_mario_action(m, ACT_SLIDE_KICK, 0)
+	    set_mario_action(m, ACT_SLIDE_KICK, 0)
     elseif B_PRESS and m.action == ACT_DIVE_PICKING_UP then
-		    set_mario_action(m, ACT_DIVE, 0)
+	    set_mario_action(m, ACT_DIVE, 0)
     elseif B_PRESS and m.action == ACT_GROUND_POUND then
-		    set_mario_action(m, ACT_DIVE, 0)
-        m.vel.y = 50
+	    set_mario_action(m, ACT_DIVE, 0)
+            m.vel.y = 50
     elseif A_PRESS and (m.action == ACT_DIVE or m.action == ACT_DIVE_SLIDE) then
-		    set_mario_action(m, ACT_SLIDE_KICK, 0)
+	    set_mario_action(m, ACT_SLIDE_KICK, 0)
     elseif B_PRESS and (m.action == ACT_SLIDE_KICK_SLIDE) then
-		    set_mario_action(m, ACT_DIVE, 0)
+	    set_mario_action(m, ACT_DIVE, 0)
     elseif A_PRESS and m.action == ACT_TRIPLE_JUMP_LAND then
             m.vel.y = 100
-		    set_mario_action(m,ACT_TWIRLING, 0)
+	    set_mario_action(m,ACT_TWIRLING, 0)
     elseif B_PRESS and (m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP) then
             set_mario_action(m,ACT_DIVE, 0)
     elseif Z_TRIG_PRESS and (m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP) then
