@@ -92,47 +92,65 @@ local function dg_moveset_mario_update(m)
     ---------------------------------------------------------------------------------------
     -- This code is horrible to read and edit, i know, i know what i did here.
     -- but also i am kinda too lazy to fix it right now, so uh, enjoy this mess. :P
+    -- Edit: I Made it a bit easier to read.
     ---------------------------------------------------------------------------------------
+
+    -- Ground pound jump. (some people call it: "ass rocket" for some reason, idk.)
     if (m.controller.buttonDown & A_BUTTON) ~= 0 and m.action == ACT_GROUND_POUND_LAND then
 	    set_mario_action(m, ACT_LAVA_BOOST, 0)
             m.vel.y = 125
+    -- Allows you to dive from a top pole jump or a lava boost. (which also includes the ground pound jump)
     elseif B_PRESS and (m.action == ACT_TOP_OF_POLE_JUMP or m.action == ACT_LAVA_BOOST) then
 	   set_mario_action(m, ACT_DIVE, 0)
+    -- Allws you to ground pound from a top pole jump or a lava boost. (which also includes the ground pound jump)
     elseif Z_TRIG_PRESS and (m.action == ACT_TOP_OF_POLE_JUMP or m.action == ACT_LAVA_BOOST) then
 	   set_mario_action(m, ACT_GROUND_POUND, 0)
+    -- Allows you to dive from a long jump (really useful not gonna lie.)
     elseif B_PRESS and m.action == ACT_LONG_JUMP then
 	   set_mario_action(m, ACT_DIVE, 0)
+    -- Allows you to slide kick from a long jump (this checks also if Z_TRIG is not being hold, so you can BLJ with it.)
     elseif A_PRESS and (m.controller.buttonDown & Z_TRIG) == 0 and m.action == ACT_LONG_JUMP then
 	    set_mario_action(m, ACT_SLIDE_KICK, 0)
+    -- Allows you to dive faster (i added it for the funny.)
     elseif B_PRESS and m.action == ACT_DIVE_PICKING_UP then
 	    set_mario_action(m, ACT_DIVE, 0)
+    -- Allows you to dive out of a ground pound. (a guy called "sonk" said i should add this instead of a kick.)
     elseif B_PRESS and m.action == ACT_GROUND_POUND then
 	    set_mario_action(m, ACT_DIVE, 0)
             m.vel.y = 50
+    -- Allows you to Slide kick from a dive. (this makes like 90% of movement tech possible from this moveset.)
     elseif A_PRESS and (m.action == ACT_DIVE or m.action == ACT_DIVE_SLIDE) then
 	    set_mario_action(m, ACT_SLIDE_KICK, 0)
+    -- Allows you to cancel a slide kick if you are sliding with it. (not in air so it prevents, you getting infinite height.)
     elseif B_PRESS and (m.action == ACT_SLIDE_KICK_SLIDE) then
 	    set_mario_action(m, ACT_DIVE, 0)
+    -- Adds a twirl jump after a triple jump. (not gonna lie, this is i guess the most pointless feature.)
     elseif A_PRESS and m.action == ACT_TRIPLE_JUMP_LAND then
             m.vel.y = 100
 	    set_mario_action(m,ACT_TWIRLING, 0)
+    -- Allows you to dive from a triple jump.
     elseif B_PRESS and (m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP) then
             set_mario_action(m,ACT_DIVE, 0)
+    -- Allows you to ground pound from a triple jump.
     elseif Z_TRIG_PRESS and (m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP) then
-            set_mario_action(m,ACT_DIVE, 0)
+            set_mario_action(m,ACT_GROUND_POUND, 0)
+    -- Allows you to dive while twirling.
     elseif B_PRESS and m.action == ACT_TWIRLING then
             set_mario_action(m,ACT_DIVE, 0)
+    -- Allows you to ground pound while twirling.
     elseif Z_TRIG_PRESS and m.action == ACT_TWIRLING then
             set_mario_action(m,ACT_GROUND_POUND, 0)
+    -- Allows you to jump while sliding on your stomach.
     elseif A_PRESS and m.action == ACT_STOMACH_SLIDE then
             set_mario_action(m,ACT_JUMP, 0)
+    -- Allows you to climp slopes way easier.
     elseif (m.action == ACT_STEEP_JUMP) then
             set_mario_action(m,ACT_JUMP, 0)
+    -- Makes the water jump actually useful.
     elseif (m.action == ACT_WATER_JUMP) then
             m.vel.y = 35
             set_mario_action(m,ACT_TRIPLE_JUMP, 0)
-    elseif Z_TRIG_PRESS and m.action == ACT_BACKFLIP then
-            set_mario_action(m,ACT_GROUND_POUND, 0)
+    -- Allows you to dive from a backflip.
     elseif B_PRESS and m.action == ACT_BACKFLIP then
             set_mario_action(m,ACT_DIVE, 0)
     end
