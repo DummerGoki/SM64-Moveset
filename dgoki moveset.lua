@@ -128,11 +128,11 @@ local function dg_moveset_mario_update(m)
     elseif A_PRESS and m.action == ACT_TRIPLE_JUMP_LAND then
             m.vel.y = 100
 	    set_mario_action(m,ACT_TWIRLING, 0)
-    -- Allows you to dive from a triple jump.
-    elseif B_PRESS and (m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP) then
+    -- Allows you to dive from a SPECIAL triple jump.
+    elseif B_PRESS and (m.action == ACT_SPECIAL_TRIPLE_JUMP) then
             set_mario_action(m,ACT_DIVE, 0)
-    -- Allows you to ground pound from a triple jump.
-    elseif Z_TRIG_PRESS and (m.action == ACT_TRIPLE_JUMP or m.action == ACT_SPECIAL_TRIPLE_JUMP) then
+    -- Allows you to ground pound from a SPECIAL triple jump.
+    elseif Z_TRIG_PRESS and (m.action == ACT_SPECIAL_TRIPLE_JUMP) then
             set_mario_action(m,ACT_GROUND_POUND, 0)
     -- Allows you to dive while twirling.
     elseif B_PRESS and m.action == ACT_TWIRLING then
