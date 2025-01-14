@@ -1,12 +1,12 @@
 # DummerGoki / DGoki moveset
-My self coded moveset.
-It tries to be advanced while also not removing things like BLJs. (so you can speedrun with it, etc.)
-I was going to keep this private, however many people asked me to release it.
+My self coded moveset.<br>
+It tries to be advanced while also not removing things like BLJs. (so you can speedrun with it, etc.)<br>
+I was going to keep this private, however many people asked me to release it.<br>
 
 ## KEEP IN MIND:
-This moveset is kinda goofy and has things that don't look right.
-These things are intended and will not be fixed, since i find them funny.
-For example: Spamming dive and slide-kicks on slopes rapidly causes you to climb them easily.
+This moveset is kinda goofy and has things that don't look right.<br>
+These things are intended and will not be fixed, since i find them funny.<br>
+For example: Spamming dive and slide-kicks on slopes rapidly causes you to climb them easily.<br>
 
 ## Here a list what the moveset does:
 + Ground pound jump. (A HOLD OR PRESS)
