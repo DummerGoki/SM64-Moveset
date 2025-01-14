@@ -75,7 +75,7 @@ local function dg_moveset_mario_update(m)
     -- This is the reset / death command
     -- Used for if the moveset get's somehow desynced or you get OOB trapped in a location.
     ---------------------------------------------------------------------------------------
-	if dg_reset_char == true then
+    if dg_reset_char == true then
         m.health = 0
         m.healCounter = 0
         m.numLives = m.numLives + 1
