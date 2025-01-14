@@ -46,7 +46,7 @@ local function knockback_check(m)
     if m.action == ACT_HARD_BACKWARD_GROUND_KB then return true end
     if m.action == ACT_FORWARD_GROUND_KB then return true end
     if m.action == ACT_BACKWARD_GROUND_KB then return true end
-    -- Canon
+    -- Cannon
     if m.action == ACT_SHOT_FROM_CANNON then return true end
     if m.action == ACT_IN_CANNON then return true end
     -- Air KB
