@@ -114,7 +114,7 @@ local function dg_moveset_mario_update(m)
     -- Allows you to dive faster (i added it for the funny.)
     elseif B_PRESS and m.action == ACT_DIVE_PICKING_UP then
 	    set_mario_action(m, ACT_DIVE, 0)
-    -- Allows you to dive out of a ground pound. (a guy called "sonk" said i should add this instead of a kick.)
+    -- Allows you to dive out of a ground pound. (a guy called "sonk" or something, said i should add this instead of a kick.)
     elseif B_PRESS and m.action == ACT_GROUND_POUND then
 	    set_mario_action(m, ACT_DIVE, 0)
             m.vel.y = 50
